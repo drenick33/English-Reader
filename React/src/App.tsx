@@ -21,7 +21,7 @@ function App() {
     <BrowserRouter>
       <div className='App'>
         <header>
-          <Navbar></Navbar>
+          <Navbar />
         </header>
         <Switch>
           <Route exact path='/' component={Browser} />
