@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Avatar } from 'antd';
 import { get } from 'lodash';
-import { browserStrings } from './Strings';
 import DifficultyTag from './DifficultyTag';
 
 const { Meta } = Card;
 
 const StoryCard = (props: any) => {
   const story = get(props, 'story', {});
-  console.log(story);
+  // console.log(story);
 
   return (
     <Link

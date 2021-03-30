@@ -3,6 +3,8 @@ import LocalizedStrings from 'react-localization';
 export const browserStrings = new LocalizedStrings({
   en: {
     new: 'Newest Stories',
+    stories: 'Stories',
+    showMore: 'Show More',
     Beginner: 'Begginer',
     Elementary: 'Elementary',
     Intermediate: 'Intermediate',
@@ -11,6 +13,8 @@ export const browserStrings = new LocalizedStrings({
   },
   zh: {
     new: '新故事',
+    stories: '故事',
+    showMore: '其他',
     Beginner: '一级',
     Elementary: '二级',
     Intermediate: '三级',

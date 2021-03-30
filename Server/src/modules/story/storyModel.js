@@ -10,14 +10,7 @@ const StorySchema = mongoose.Schema({
   author: { type: String, required: true },
   level: {
     type: String,
-    enum: [
-      'Beginner',
-      'Elementary',
-      'Intermediate',
-      'Upper Intermediate',
-      'Expert',
-      'Master',
-    ],
+    enum: ['Beginner', 'Elementary', 'Intermediate', 'Expert', 'Master'],
     default: 'Intermediate',
   },
   genre: {

@@ -19,6 +19,16 @@ const Navbar = ({ logout, auth }: ILogoutProps) => {
   console.log(role);
   console.log(auth);
 
+  useEffect(() => {
+    let lang = localStorage.getItem('locale') || '';
+    navStrings.setLanguage(lang);
+  }, []);
+
+  const setLang = (lang: string) => {
+    localStorage.setItem('locale', lang);
+    window.location.reload();
+  };
+
   const logoutHandler = () => {
     history.push('/');
     logout();

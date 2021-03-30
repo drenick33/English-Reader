@@ -1,9 +1,14 @@
 const Story = require('../storyModel');
 
-const getNewStories = (req, res) => {
+const getStoriesByDifficulty = (req, res) => {
+  let difficulty = req.params.difficulty;
   let limit = parseInt(req.params.limit);
 
-  Story.find()
+  if (!limit) {
+    limit = 1000;
+  }
+
+  Story.find({ level: difficulty })
     .sort({ date: -1 })
     .limit(limit)
     .select('-__v')
@@ -11,7 +16,7 @@ const getNewStories = (req, res) => {
     .then((doc) => {
       if (doc.length > 0) {
         const response = {
-          message: 'getAllStories Success',
+          message: 'getStoryByDifficulty Success',
           count: doc.length,
           stories: doc,
         };
@@ -26,4 +31,4 @@ const getNewStories = (req, res) => {
     });
 };
 
-module.exports = getNewStories;
+module.exports = getStoriesByDifficulty;

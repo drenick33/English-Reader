@@ -1,17 +1,17 @@
 const Story = require('../storyModel');
 
-const getNewStories = (req, res) => {
-  let limit = parseInt(req.params.limit);
+const getStoriesByTitle = (req, res) => {
+  let title = req.params.title;
 
-  Story.find()
+  Story.find({ title: { $regex: title, $options: 'i' } })
     .sort({ date: -1 })
-    .limit(limit)
+    .limit(10)
     .select('-__v')
     .exec()
     .then((doc) => {
       if (doc.length > 0) {
         const response = {
-          message: 'getAllStories Success',
+          message: 'getStoryByTitle Success',
           count: doc.length,
           stories: doc,
         };
@@ -26,4 +26,4 @@ const getNewStories = (req, res) => {
     });
 };
 
-module.exports = getNewStories;
+module.exports = getStoriesByTitle;

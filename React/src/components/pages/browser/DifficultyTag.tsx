@@ -6,7 +6,6 @@ import { browserStrings } from './Strings';
 const StoryCard = (props: any) => {
   const difficulty = get(props, 'difficulty', 'Beginner');
   let [color, setColor] = useState('');
-  let [localizedDif, setLoaclizedDif] = useState('');
 
   useEffect(() => {
     setDifficultyTagColor();

@@ -5,6 +5,8 @@ import { loadUser } from './store/actions/authActions';
 import './App.less';
 import Navbar from './components/layout/Navbar';
 import Story from './components/pages/story/Story';
+import NewStoriesAll from './components/pages/browser/NewStoriesAll';
+import DifficultyStoriesAll from './components/pages/browser/DifficultyStoriesAll';
 import Browser from './components/pages/browser/Browser';
 import WordList from './components/pages/savedWords/WordList';
 import InputForm from './components/pages/userText/InputForm';
@@ -25,6 +27,12 @@ function App() {
         </header>
         <Switch>
           <Route exact path='/' component={Browser} />
+          <Route exact path='/newstories' component={NewStoriesAll} />
+          <Route
+            exact
+            path='/difficulties/:difficulty'
+            component={DifficultyStoriesAll}
+          />
           <Route path='/story/:storyId' component={Story} />
           <Route path='/addstory' component={StoryAdd} />
           <Route exact path='/words' component={WordList} />

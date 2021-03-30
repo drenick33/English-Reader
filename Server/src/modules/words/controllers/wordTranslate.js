@@ -1,5 +1,5 @@
 const request = require('request');
-const uuidv4 = require('uuid/v4');
+const { v4: uuidv4 } = require('uuid');
 
 const wordTranslate = (req, res) => {
   /* This simple app uses the '/translate' resource to translate text from
