@@ -17,7 +17,7 @@ const DifficultySelector = (props: any) => {
 
   return (
     <div>
-      <p>{navStrings.lang}</p>
+      <p>{navStrings.diff}</p>
       <Select
         defaultValue={localStorage.getItem('difficulty') || 'Beginner'}
         onSelect={(value: string) => setDifficulty(value)}

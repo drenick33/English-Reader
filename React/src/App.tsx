@@ -8,6 +8,7 @@ import Story from './components/pages/story/Story';
 import NewStoriesAll from './components/pages/browser/NewStoriesAll';
 import DifficultyStoriesAll from './components/pages/browser/DifficultyStoriesAll';
 import Browser from './components/pages/browser/Browser';
+import Search from './components/pages/browser/Search';
 import WordList from './components/pages/savedWords/WordList';
 import InputForm from './components/pages/userText/InputForm';
 import UserRegister from './components/pages/user/userRegister';
@@ -27,6 +28,7 @@ function App() {
         </header>
         <Switch>
           <Route exact path='/' component={Browser} />
+          <Route exact path='/search' component={Search} />
           <Route exact path='/newstories' component={NewStoriesAll} />
           <Route
             exact

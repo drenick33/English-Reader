@@ -36,29 +36,29 @@ const Navbar = ({ logout, auth }: ILogoutProps) => {
 
   return (
     <Menu theme='light' mode='horizontal'>
-      <Menu.Item key='1'>
+      <Menu.Item key='home'>
         <a href='/'>
           <HomeTwoTone twoToneColor={'#1DA57A'} />
           <span>{navStrings.reader}</span>
         </a>
       </Menu.Item>
-      <Menu.Item key='3' style={{ float: 'right' }}>
+      <Menu.Item key='options' style={{ float: 'right' }}>
         <NavDrawer></NavDrawer>
       </Menu.Item>
       {auth.isAuthenticated ? (
         <>
-          <Menu.Item key='5' style={{ float: 'right' }}>
+          <Menu.Item key='logout' style={{ float: 'right' }}>
             <Button type='text' onClick={logoutHandler}>
               {navStrings.logout}
             </Button>
           </Menu.Item>
-          <Menu.Item key='2' style={{ float: 'right' }}>
+          <Menu.Item key='words' style={{ float: 'right' }}>
             <Link to={{ pathname: '/words' }}>{navStrings.saved}</Link>
           </Menu.Item>
         </>
       ) : (
         <>
-          <Menu.Item key='6' style={{ float: 'right' }}>
+          <Menu.Item key='register' style={{ float: 'right' }}>
             <Link
               to={{
                 pathname: '/user/register',
@@ -67,7 +67,7 @@ const Navbar = ({ logout, auth }: ILogoutProps) => {
               {navStrings.register}
             </Link>
           </Menu.Item>
-          <Menu.Item key='7' style={{ float: 'right' }}>
+          <Menu.Item key='login' style={{ float: 'right' }}>
             <Link
               to={{
                 pathname: '/user/login',
@@ -78,7 +78,16 @@ const Navbar = ({ logout, auth }: ILogoutProps) => {
           </Menu.Item>
         </>
       )}
-      <Menu.Item key='4' style={{ float: 'right' }}>
+      <Menu.Item key='search' style={{ float: 'right' }}>
+        <Link
+          to={{
+            pathname: '/search/',
+          }}
+        >
+          {navStrings.search}
+        </Link>
+      </Menu.Item>
+      <Menu.Item key='custom' style={{ float: 'right' }}>
         <Link
           to={{
             pathname: '/custom/',
@@ -88,7 +97,7 @@ const Navbar = ({ logout, auth }: ILogoutProps) => {
         </Link>
       </Menu.Item>
       {role === 'admin' ? (
-        <Menu.Item key='10' style={{ float: 'right' }}>
+        <Menu.Item key='addstory' style={{ float: 'right' }}>
           <Link
             to={{
               pathname: '/addstory/',
